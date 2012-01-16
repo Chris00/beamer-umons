@@ -1,12 +1,13 @@
-WEB = math.umons.ac.be:~/html/bzr/beamerUMONS/
+WEB = san-bzr@math.umons.ac.be:~/public_html/beamerUMONS/
 
+VERSION = 0.1
 UMONS_IMG = $(wildcard $(HOME)/TeX/graphics/UMONS*)
 BEAMER = $(wildcard *.sty)
 
 DIST_FILES = beamercolorthemeUMONS.sty beamerouterthemeUMONS.sty \
   beamerthemeUMONS.sty example.tex
 
-TARBALL = beamerUMONS
+TARBALL = beamerUMONS-$(VERSION)
 
 example.pdf: example.tex $(BEAMER)
 	pdflatex $< && pdflatex $<
@@ -20,8 +21,9 @@ tar:
 	$(RM) -rf $(TARBALL)
 
 .phony: upload
-upload:
+upload: tar
 	scp -C -p $(UMONS_IMG) $(WEB)
+	scp -C -p $(TARBALL).tar.gz $(WEB)
 
 clean:
 	$(RM) $(wildcard *~ *.pdf)
