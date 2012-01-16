@@ -1,0 +1,18 @@
+% Copyright 2009 by C. Troestler <Christophe.Troestler@umons.ac.be>
+% This file is under GNU GPL v3 or later.
+
+\mode<presentation>
+
+\def\beamer@themeUMONS@navigation{}
+
+\DeclareOptionBeamer{navigation}[true]{%
+  \def\beamer@themeUMONS@navigation{#1}}
+
+\ProcessOptionsBeamer
+
+\useinnertheme{rectangles}
+\usecolortheme{UMONS}
+\useoutertheme[navigation=\beamer@themeUMONS@navigation]{UMONS}
+
+
+\mode<all>
