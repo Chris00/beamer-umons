@@ -4,15 +4,20 @@
 \mode<presentation>
 
 \def\beamer@themeUMONS@navigation{}
+\def\beamer@themeUMONS@totalframenumber{}
 
 \DeclareOptionBeamer{navigation}[true]{%
   \def\beamer@themeUMONS@navigation{#1}}
+
+\DeclareOptionBeamer{totalframenumber}[true]{%
+  \def\beamer@themeUMONS@totalframenumber{#1}}
 
 \ProcessOptionsBeamer
 
 \useinnertheme{rectangles}
 \usecolortheme{UMONS}
-\useoutertheme[navigation=\beamer@themeUMONS@navigation]{UMONS}
+\useoutertheme[navigation=\beamer@themeUMONS@navigation,
+               totalframenumber=\beamer@themeUMONS@totalframenumber]{UMONS}
 
 
 \mode<all>
