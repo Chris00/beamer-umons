@@ -7,6 +7,10 @@
 \DeclareOptionBeamer{navigation}[true]{%
   \def\beamer@themeUMONS@navigation{#1}}
 
+\def\beamer@themeUMONS@nosubsection{false}
+\DeclareOptionBeamer{no-subsection}[true]{%
+  \def\beamer@themeUMONS@nosubsection{#1}}
+
 \def\beamer@themeUMONS@nototalframenumber{false}
 \DeclareOptionBeamer{no-totalframenumber}[true]{%
   \def\beamer@themeUMONS@nototalframenumber{#1}}
@@ -16,6 +20,7 @@
 \useinnertheme{rectangles}
 \usecolortheme{UMONS}
 \useoutertheme[navigation=\beamer@themeUMONS@navigation,
+               no-subsection=\beamer@themeUMONS@nosubsection,
                no-totalframenumber=\beamer@themeUMONS@nototalframenumber]{UMONS}
 
 

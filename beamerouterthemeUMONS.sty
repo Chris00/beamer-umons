@@ -6,8 +6,10 @@
 \DeclareOptionBeamer{navigation}[true]{%
   \csname beamer@UMONS@navigation#1\endcsname}
 
-\newif\ifbeamer@UMONS@totalframenumber
-\beamer@UMONS@totalframenumbertrue
+\newif\ifbeamer@UMONS@nosubsection
+\beamer@UMONS@nosubsectionfalse
+\DeclareOptionBeamer{no-subsection}[true]{%
+  \csname beamer@UMONS@nosubsection#1\endcsname}
 
 \newif\ifbeamer@UMONS@nototalframenumber
 \beamer@UMONS@nototalframenumberfalse
@@ -68,14 +70,21 @@
   \ifbeamer@UMONS@navigation
   \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
   \end{beamercolorbox}%
+  % Box for section titles and possibly subtitles (for fast navigation)
   \begin{beamercolorbox}{section in head/foot}
-    \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+    \ifbeamer@UMONS@nosubsection
+    \insertsectionnavigationhorizontal{\paperwidth}{%
+      \vspace*{2pt}}{\vspace*{2pt}}%
+    \else
+    \vspace*{2pt}\insertnavigation{\paperwidth}\vspace*{2pt}%
+    \fi
   \end{beamercolorbox}%
   \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
   \end{beamercolorbox}%
   \fi
 }
 
+\setbeamertemplate{mini frames}[box]
 \setbeamersize{text margin left=1em,text margin right=1em}
 
 \mode
