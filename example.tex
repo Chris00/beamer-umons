@@ -1,6 +1,10 @@
-\documentclass{beamer}
+\documentclass[compress]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+
+\newcommand{\IR}{\mathbb{R}}
+
 
 \usetheme[navigation]{UMONS}
 %\usetheme[navigation,totalframenumber=false]{UMONS}
@@ -27,6 +31,7 @@
 \end{frame}
 
 \section{Première section}
+\subsection{Première sous-section}
 \begin{frame}
   \frametitle{Premier transparent}
 
@@ -39,6 +44,17 @@
   \item Niveau 1 d'\texttt{itemize}
   \end{itemize}
 \end{frame}
+
+\subsection{Deuxième sous-section}
+\begin{frame}
+  \frametitle{Second transparent}
+
+  \begin{theorem}
+    Soit $f : \IR \to \IR$ une fonction continue et coercive.  Alors
+    $f$ possède un minimum.
+  \end{theorem}
+\end{frame}
+
 
 \section{Deuxième section}
 \begin{frame}
