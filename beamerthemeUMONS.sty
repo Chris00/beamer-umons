@@ -3,21 +3,20 @@
 
 \mode<presentation>
 
-\def\beamer@themeUMONS@navigation{}
-\def\beamer@themeUMONS@totalframenumber{}
-
+\def\beamer@themeUMONS@navigation{false}
 \DeclareOptionBeamer{navigation}[true]{%
   \def\beamer@themeUMONS@navigation{#1}}
 
-\DeclareOptionBeamer{totalframenumber}[true]{%
-  \def\beamer@themeUMONS@totalframenumber{#1}}
+\def\beamer@themeUMONS@nototalframenumber{false}
+\DeclareOptionBeamer{no-totalframenumber}[true]{%
+  \def\beamer@themeUMONS@nototalframenumber{#1}}
 
 \ProcessOptionsBeamer
 
 \useinnertheme{rectangles}
 \usecolortheme{UMONS}
 \useoutertheme[navigation=\beamer@themeUMONS@navigation,
-               totalframenumber=\beamer@themeUMONS@totalframenumber]{UMONS}
+               no-totalframenumber=\beamer@themeUMONS@nototalframenumber]{UMONS}
 
 
 \mode<all>

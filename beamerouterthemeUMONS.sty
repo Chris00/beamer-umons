@@ -9,8 +9,11 @@
 \newif\ifbeamer@UMONS@totalframenumber
 \beamer@UMONS@totalframenumbertrue
 
-\DeclareOptionBeamer{totalframenumber}[true]{%
-  \csname beamer@UMONS@totalframenumber#1\endcsname}
+\newif\ifbeamer@UMONS@nototalframenumber
+\beamer@UMONS@nototalframenumberfalse
+
+\DeclareOptionBeamer{no-totalframenumber}[true]{%
+  \csname beamer@UMONS@nototalframenumber#1\endcsname}
 
 \ProcessOptionsBeamer
 
@@ -45,7 +48,7 @@
       date in head/foot}%
     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
     \insertframenumber
-    \ifbeamer@UMONS@totalframenumber ~/~\inserttotalframenumber\fi
+    \ifbeamer@UMONS@nototalframenumber\else ~/~\inserttotalframenumber\fi
     \hspace*{2ex}
   \end{beamercolorbox}}%
   \vskip0pt%
