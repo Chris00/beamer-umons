@@ -3,14 +3,17 @@
 
 \mode<presentation>
 
+% Display a navigation bar
 \def\beamer@themeUMONS@navigation{false}
 \DeclareOptionBeamer{navigation}[true]{%
   \def\beamer@themeUMONS@navigation{#1}}
 
+% Do not display "boxes" to go to subsections in the navigation bar.
 \def\beamer@themeUMONS@nosubsection{false}
 \DeclareOptionBeamer{no-subsection}[true]{%
   \def\beamer@themeUMONS@nosubsection{#1}}
 
+% Do not display the total number of pages.
 \def\beamer@themeUMONS@nototalframenumber{false}
 \DeclareOptionBeamer{no-totalframenumber}[true]{%
   \def\beamer@themeUMONS@nototalframenumber{#1}}
