@@ -1,6 +1,6 @@
 WEB = san-bzr@math.umons.ac.be:~/public_html/beamerUMONS/
 
-VERSION = 0.2
+VERSION = 0.3
 UMONS_IMG = $(wildcard $(HOME)/TeX/graphics/UMONS*)
 BEAMER = $(wildcard *.sty)
 
